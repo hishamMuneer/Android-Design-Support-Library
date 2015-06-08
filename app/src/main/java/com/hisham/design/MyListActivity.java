@@ -17,14 +17,14 @@ public class MyListActivity extends AppCompatActivity {
     String objects[] = new String[]{
             "NavigationView",
             "Floating Label (EditText) Sample",
-//            "Elevation Sample",
+            "Floating Action Button Sample",
 //            "Sliding Example",
 //            "Transition"
     };
     Class[] classes = new Class[]{
             NavigationViewActivity.class,
             TextInputLayoutActivity.class,
-//            ElevationSampleActivity.class,
+            FloatingActionButtonActivity.class,
 //            SlidingActivity.class,
 //            TransitionFirstActivity.class
     };

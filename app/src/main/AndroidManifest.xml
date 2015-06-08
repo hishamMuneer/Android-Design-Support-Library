@@ -24,6 +24,10 @@
             android:name=".TextInputLayoutActivity"
             android:label="@string/title_activity_floating_labels" >
         </activity>
+        <activity
+            android:name=".FloatingActionButtonActivity"
+            android:label="@string/title_activity_floating_action_button" >
+        </activity>
     </application>
 
 </manifest>
