@@ -1,0 +1,70 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_item_1"
+            android:checked="true"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/item_1" />
+        <item
+            android:id="@+id/navigation_item_2"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/item_2" />
+
+
+        <item
+            android:id="@+id/navigation_item_3"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/item_1" />
+        <item
+            android:id="@+id/navigation_item_4"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/item_2" />
+
+
+        <item
+            android:id="@+id/navigation_item_5"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/item_1" />
+        <item
+            android:id="@+id/navigation_item_6"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/item_2" />
+
+
+        <item
+            android:id="@+id/navigation_item_7"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/item_1" />
+        <item
+            android:id="@+id/navigation_item_8"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/item_2" />
+    </group>
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="@string/action_settings"
+        app:showAsAction="never" />
+
+
+    <item
+        android:id="@+id/navigation_subheader"
+        android:title="@string/sub_header">
+        <menu>
+            <item
+                android:id="@+id/navigation_sub_item_1"
+                android:icon="@mipmap/ic_launcher"
+                android:title="@string/sub_item_1"/>
+            <item
+                android:id="@+id/navigation_sub_item_2"
+                android:icon="@mipmap/ic_launcher"
+                android:title="@string/sub_item_2"/>
+        </menu>
+    </item>
+
+</menu>
