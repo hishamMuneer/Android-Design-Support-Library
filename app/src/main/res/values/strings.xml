@@ -14,5 +14,7 @@
     <string name="hint_float_label">This edit text has a floating label.</string>
     <string name="hint_float_label_why">While an EditText alone will hide the hint text after the first character is typed, you can now wrap it in a TextInputLayout, causing the hint text to become a floating label above the EditText, ensuring that users never lose context in what they are entering.</string>
     <string name="title_activity_floating_action_button">FloatingActionButtonActivity</string>
+    <string name="title_activity_tab_layout">TabLayoutActivity</string>
+    <string name="title_activity_coordinator_layout">CoordinatorLayoutActivity</string>
 
 </resources>

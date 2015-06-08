@@ -28,6 +28,14 @@
             android:name=".FloatingActionButtonActivity"
             android:label="@string/title_activity_floating_action_button" >
         </activity>
+        <activity
+            android:name=".TabLayoutActivity"
+            android:label="@string/title_activity_tab_layout" >
+        </activity>
+        <activity
+            android:name=".CoordinatorLayoutActivity"
+            android:label="@string/title_activity_coordinator_layout" >
+        </activity>
     </application>
 
 </manifest>

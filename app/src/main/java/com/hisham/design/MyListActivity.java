@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TableLayout;
 
 
 public class MyListActivity extends AppCompatActivity {
@@ -17,16 +18,16 @@ public class MyListActivity extends AppCompatActivity {
     String objects[] = new String[]{
             "NavigationView",
             "Floating Label (EditText) Sample",
-            "Floating Action Button Sample",
-//            "Sliding Example",
-//            "Transition"
+            "Floating Action Button And SnackBar Sample",
+            "TabLayout Example",
+            "Coordinator Layout"
     };
     Class[] classes = new Class[]{
             NavigationViewActivity.class,
             TextInputLayoutActivity.class,
             FloatingActionButtonActivity.class,
-//            SlidingActivity.class,
-//            TransitionFirstActivity.class
+            TabLayoutActivity.class,
+            CoordinatorLayoutActivity.class
     };
 
     @Override
