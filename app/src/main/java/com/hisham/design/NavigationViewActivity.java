@@ -65,7 +65,7 @@ import android.widget.Toast;
  </group>
 
  *
- * You’ll get callbacks on selected items by setting a OnNavigationItemSelectedListener using setNavigationItemSelectedListener().
+ * You'll get callbacks on selected items by setting a OnNavigationItemSelectedListener using setNavigationItemSelectedListener().
  * This provides you with the MenuItem that was clicked, allowing you to handle selection events, changed the checked status,
  * load new content, programmatically close the drawer, or any other actions you may want.
  *

@@ -16,10 +16,10 @@ import android.widget.ListView;
 
 /**
  * A floating action button is a round button denoting a primary action on your interface.
- * The Design library’s FloatingActionButton gives you a single consistent implementation, by default colored using the colorAccent from your theme.
+ * The Design library's FloatingActionButton gives you a single consistent implementation, by default colored using the colorAccent from your theme.
  * In addition to the normal size floating action button,
  * it also supports the mini size (fabSize="mini") when visual continuity with other elements is critical.
- * As FloatingActionButton extends ImageView, you’ll use android:src or any of the methods such as setImageDrawable() to
+ * As FloatingActionButton extends ImageView, you'll use android:src or any of the methods such as setImageDrawable() to
  * control the icon shown within the FloatingActionButton.
  *
  * Code:
