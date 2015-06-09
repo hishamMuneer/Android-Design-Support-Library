@@ -92,6 +92,10 @@ public class NavigationViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+
+
         navigationView = (NavigationView) findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(navigationItemSelectedListener);
         drawerLayout = (DrawerLayout)findViewById(R.id.drawerLayout);
