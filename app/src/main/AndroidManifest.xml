@@ -36,6 +36,10 @@
             android:name=".CoordinatorLayoutActivity"
             android:label="@string/title_activity_coordinator_layout" >
         </activity>
+        <activity
+            android:name=".CollapsingToolbars"
+            android:label="@string/collapsing_toolbars" >
+        </activity>
     </application>
 
 </manifest>

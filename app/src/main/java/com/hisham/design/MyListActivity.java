@@ -20,14 +20,16 @@ public class MyListActivity extends AppCompatActivity {
             "Floating Label (EditText) Sample",
             "Floating Action Button And SnackBar Sample",
             "TabLayout Example",
-            "Coordinator Layout"
+            "Coordinator Layout",
+            "Collapsing Toolbars"
     };
     Class[] classes = new Class[]{
             NavigationViewActivity.class,
             TextInputLayoutActivity.class,
             FloatingActionButtonActivity.class,
             TabLayoutActivity.class,
-            CoordinatorLayoutActivity.class
+            CoordinatorLayoutActivity.class,
+            CollapsingToolbars.class
     };
 
     @Override

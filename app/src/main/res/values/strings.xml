@@ -16,5 +16,6 @@
     <string name="title_activity_floating_action_button">FloatingActionButtonActivity</string>
     <string name="title_activity_tab_layout">TabLayoutActivity</string>
     <string name="title_activity_coordinator_layout">CoordinatorLayoutActivity</string>
+    <string name="collapsing_toolbars">Collapsing Toolbars</string>
 
 </resources>
