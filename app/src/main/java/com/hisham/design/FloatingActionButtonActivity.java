@@ -92,11 +92,11 @@ public class FloatingActionButtonActivity extends AppCompatActivity {
         floatingButon.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final Snackbar snackbar = Snackbar.make(parentLayout, "You just clicked",Snackbar.LENGTH_LONG);
+                final Snackbar snackbar = Snackbar.make(parentLayout, "You just clicked", Snackbar.LENGTH_LONG);
 //                snackbar.setDuration(10);
                 snackbar.setAction("Dismiss", new View.OnClickListener() {
                     @Override
-                    public void onClick(View v) {
+                    public void onClick(View v1) {
                         snackbar.dismiss();
                     }
                 });

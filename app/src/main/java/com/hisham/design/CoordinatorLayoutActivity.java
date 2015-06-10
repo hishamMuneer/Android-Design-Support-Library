@@ -119,18 +119,12 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
 
         parentLayoutCo = findViewById(R.id.parentLayout);
 
-
-
-
         floatingButtonCo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Snackbar.make(coordinatorLayout, "You clicked on floating button.", Snackbar.LENGTH_LONG).show();
             }
         });
-
-
-
     }
 
     @Override
