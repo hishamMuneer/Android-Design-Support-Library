@@ -46,7 +46,7 @@ public class MyListActivity extends AppCompatActivity {
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                startActivity(new Intent(getApplicationContext(), classes[position]));
+                MyListActivity.this.startActivity(new Intent(getApplicationContext(), classes[position]));
             }
         });
 
