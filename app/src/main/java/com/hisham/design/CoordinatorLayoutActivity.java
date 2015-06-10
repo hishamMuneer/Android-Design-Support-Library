@@ -21,6 +21,18 @@ import java.util.ArrayList;
 
  CoordinatorLayout and floating action buttons
  A great example of this is when you add a FloatingActionButton as a child of your CoordinatorLayout and then pass that CoordinatorLayout to your Snackbar.make() call - instead of the snackbar displaying over the floating action button, the FloatingActionButton takes advantage of additional callbacks provided by CoordinatorLayout to automatically move upward as the snackbar animates in and returns to its lastPosition when the snackbar animates out on Android 3.0 and higher devices - no extra code required.
+
+ SnackBar
+ * <pre class="prettyprint">
+ * Snackbar.make(coordinatorLayout, "You removed : " + lastItem, Snackbar.LENGTH_LONG)
+ * .setAction("Undo", new View.OnClickListener() {
+ *
+     * public void onClick(View v) {
+     *      list.add(lastPosition, lastItem);
+     * adapter.notifyDataSetChanged();
+     * }
+ * }).show();
+ * </pre>
  */
 public class CoordinatorLayoutActivity extends AppCompatActivity {
 
