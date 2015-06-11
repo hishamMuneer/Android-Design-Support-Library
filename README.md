@@ -1,5 +1,4 @@
-# Android-Design-Support-Library
-
+Android-Design-Support-Library
 ===================================
 
 Some features of new Android Design library. This sample contains the following:
