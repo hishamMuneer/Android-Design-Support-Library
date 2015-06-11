@@ -40,7 +40,11 @@
         <activity
             android:name=".CollapsingToolbars"
             android:label="@string/collapsing_toolbars"
-            android:theme="@style/NoActionBarTheme">
+            android:theme="@style/NoActionBarTheme" >
+        </activity>
+        <activity
+            android:name=".PaletteActivity"
+            android:label="@string/title_activity_pallete" >
         </activity>
     </application>
 

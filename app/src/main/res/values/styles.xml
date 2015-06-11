@@ -9,12 +9,13 @@
         <!--   theme UI controls like checkboxes and text fields -->
         <item name="colorAccent">#FF2A28</item>
         <!--Color of text in the app-->
-        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <!--<item name="android:textColorPrimary">@color/textColorPrimary</item>-->
         <!--Background color of all activities-->
         <item name="android:windowBackground">@color/windowBG</item>
         <!-- If you want to display Drawer to Arrow transition -->
         <!--<item name="drawerArrowStyle">@style/DrawerArrowStyle</item>-->
-        <item name="android:textColor">#5f5f5f</item>
+
+        <!--<item name="android:textColor">#5f5f5f</item>-->
 
     </style>
 

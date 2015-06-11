@@ -43,7 +43,8 @@ public class MyListActivity extends AppCompatActivity {
             "Floating Action Button And SnackBar Sample",
             "TabLayout Example",
             "Coordinator Layout",
-            "Collapsing Toolbars"
+            "Collapsing Toolbars",
+            "Palette Changing Colors"
     };
     Class[] classes = new Class[]{
             NavigationViewActivity.class,
@@ -51,7 +52,8 @@ public class MyListActivity extends AppCompatActivity {
             FloatingActionButtonActivity.class,
             TabLayoutActivity.class,
             CoordinatorLayoutActivity.class,
-            CollapsingToolbars.class
+            CollapsingToolbars.class,
+            PaletteActivity.class
     };
     private DrawerLayout mDrawerLayout;
 
