@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -80,6 +82,30 @@ import android.widget.Toast;
  * minmpa/ic_launcher
  *
  * </pre>
+ *
+ * To make drawer arrow animation. Add the following lines of code in onCreate()
+ *
+ *final ActionBar ab = getSupportActionBar();
+ ab.setHomeAsUpIndicator(R.drawable.ic_menu);
+ ab.setDisplayHomeAsUpEnabled(true);
+
+ ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
+ drawerLayout.setDrawerListener(actionBarDrawerToggle);
+ actionBarDrawerToggle.syncState();
+ *
+ *
+ * Android you also need to implement the onOptionsItemSelected like this:
+ *
+ * int id = item.getItemId();
+
+ if(android.R.id.home == id) {
+ if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+ drawerLayout.closeDrawer(GravityCompat.START);
+ } else {
+ drawerLayout.openDrawer(GravityCompat.START);
+ }
+ }
+ *
  */
 public class NavigationViewActivity extends AppCompatActivity {
 
@@ -94,6 +120,15 @@ public class NavigationViewActivity extends AppCompatActivity {
         navigationView = (NavigationView) findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(navigationItemSelectedListener);
         drawerLayout = (DrawerLayout)findViewById(R.id.drawerLayout);
+
+        final ActionBar ab = getSupportActionBar();
+        ab.setHomeAsUpIndicator(R.drawable.ic_menu);
+        ab.setDisplayHomeAsUpEnabled(true);
+
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.open, R.string.close);
+        drawerLayout.setDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
+
     }
 
     @Override
@@ -121,7 +156,7 @@ public class NavigationViewActivity extends AppCompatActivity {
 
             Log.e(TAG, menuItem.getItemId() + " : " + menuItem.getTitle());
             Toast.makeText(getApplicationContext(), menuItem.getItemId() + " : " + menuItem.getTitle(), Toast.LENGTH_SHORT).show();
-            drawerLayout.closeDrawer(GravityCompat.START);
+            drawerLayout.closeDrawers();
             return true;
         }
     };
@@ -138,6 +173,14 @@ public class NavigationViewActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+
+        if(android.R.id.home == id) {
+            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                drawerLayout.closeDrawer(GravityCompat.START);
+            } else {
+                drawerLayout.openDrawer(GravityCompat.START);
+            }
+        }
 
         if (id == R.id.action_settings) {
             return true;

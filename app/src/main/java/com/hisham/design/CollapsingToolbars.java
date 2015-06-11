@@ -1,5 +1,6 @@
 package com.hisham.design;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -7,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
+
+import static android.R.color.black;
+import static android.R.color.holo_blue_dark;
 
 /**
  * Created by faisal pc on 6/9/2015.
@@ -58,13 +62,15 @@ public class CollapsingToolbars extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_collaping_toolbars_layout);
 
-        final Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
+//        getSupportActionBar().setHomeButtonEnabled(true);
 
         CollapsingToolbarLayout collapsingToolbar =
                 (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+        collapsingToolbar.setCollapsedTitleTextColor(Color.BLUE);
+        collapsingToolbar.setExpandedTitleColor(Color.BLACK);
         collapsingToolbar.setTitle("Wow Koala");
 
         loadBackdrop();

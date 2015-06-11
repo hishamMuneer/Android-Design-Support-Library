@@ -9,7 +9,8 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MyListActivity"
-            android:label="@string/title_activity_my_list" >
+            android:label="@string/title_activity_my_list"
+            android:theme="@style/AppTheme" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
