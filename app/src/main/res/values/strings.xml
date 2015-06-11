@@ -7,6 +7,10 @@
     <string name="title_activity_my_list">MyListActivity</string>
     <string name="item_1">Item 1</string>
     <string name="item_2">Item 2</string>
+
+    <string name="close">Close</string>
+    <string name="open">Open</string>
+
     <string name="sub_header">Sub Header</string>
     <string name="sub_item_1">Sub Item 1</string>
     <string name="sub_item_2">Sub Item 2</string>
