@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!--https://developer.android.com/training/material/theme.html-->
+    <!--http://www.google.co.in/design/spec/style/color.html#color-ui-color-application-->
     <style name="AppTheme" parent="Theme.AppCompat.Light">
         <!-- Main theme colors -->
         <!--   your app branding color for the app bar -->
