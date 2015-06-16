@@ -44,7 +44,8 @@ public class MyListActivity extends AppCompatActivity {
             "TabLayout Example",
             "Coordinator Layout",
             "Collapsing Toolbars",
-            "Palette Changing Colors"
+            "Palette Changing Colors",
+            "Social Login Example"
     };
     Class[] classes = new Class[]{
             NavigationViewActivity.class,
@@ -53,7 +54,8 @@ public class MyListActivity extends AppCompatActivity {
             TabLayoutActivity.class,
             CoordinatorLayoutActivity.class,
             CollapsingToolbars.class,
-            PaletteActivity.class
+            PaletteActivity.class,
+            SocialLoginActivity.class
     };
     private DrawerLayout mDrawerLayout;
 
