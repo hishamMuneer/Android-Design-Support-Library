@@ -8,6 +8,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
@@ -15,6 +17,8 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.plus.Plus;
 import com.google.android.gms.plus.model.people.Person;
+
+import java.lang.reflect.Method;
 
 
 /**
@@ -54,6 +58,7 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
      */
     private boolean mIntentInProgress;
     private ProgressDialog progressDialog;
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,6 +74,7 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
 
         findViewById(R.id.sign_in_button).setOnClickListener(this);
         findViewById(R.id.logout).setOnClickListener(this);
+        listView = (ListView) findViewById(R.id.listView);
     }
 
     @Override
@@ -125,13 +131,34 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
         mSignInClicked = false;
 
         if (Plus.PeopleApi.getCurrentPerson(mGoogleApiClient) != null) {
+
             Person currentPerson = Plus.PeopleApi.getCurrentPerson(mGoogleApiClient);
             String personName = currentPerson.getDisplayName();
+
             //String personPhoto = currentPerson.getImage();
             String personGooglePlusProfile = currentPerson.getUrl();
             String email = Plus.AccountApi.getAccountName(mGoogleApiClient);
             Toast.makeText(this, "User is connected: " + personName + " | Email: " + email, Toast.LENGTH_LONG).show();
         }
+    }
+
+    private void showAllMethodsWithValues(Class classObj) {
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line);
+        listView.setAdapter(adapter);
+        // Get the public methods associated with this class.
+        Method[] methods = classObj.getMethods();
+        for (Method method:methods)
+        {
+            System.out.println("Public method found: " + method.toString());
+
+            try {
+                Object x = method.invoke(method.toString());
+                if(x instanceof String)
+                    adapter.add(method.toString() + " | " + x.toString());
+            } catch (Exception e) {
+            }
+        }
+        adapter.notifyDataSetChanged();
     }
 
     protected void onActivityResult(int requestCode, int responseCode, Intent intent) {
