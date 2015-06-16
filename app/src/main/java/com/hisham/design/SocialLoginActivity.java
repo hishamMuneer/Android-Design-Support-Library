@@ -1,5 +1,6 @@
 package com.hisham.design;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.IntentSender;
 import android.os.Bundle;
@@ -52,6 +53,7 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
      * True if we are in the process of resolving a ConnectionResult
      */
     private boolean mIntentInProgress;
+    private ProgressDialog progressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,6 +68,7 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
                 .build();
 
         findViewById(R.id.sign_in_button).setOnClickListener(this);
+        findViewById(R.id.logout).setOnClickListener(this);
     }
 
     @Override
@@ -87,6 +90,8 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
         if (view.getId() == R.id.sign_in_button && !mGoogleApiClient.isConnecting()) {
             mSignInClicked = true;
             mGoogleApiClient.connect();
+            progressDialog = ProgressDialog.show(this, "Please Wait...",
+                    "Google+ Sign In.", true);
         }
 
         if (view.getId() == R.id.logout) {
@@ -130,6 +135,7 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
     }
 
     protected void onActivityResult(int requestCode, int responseCode, Intent intent) {
+        progressDialog.dismiss();
         if (requestCode == RC_SIGN_IN) {
             if (responseCode != RESULT_OK) {
                 mSignInClicked = false;
