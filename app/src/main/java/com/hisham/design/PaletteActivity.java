@@ -117,4 +117,8 @@ public class PaletteActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
+
+
 }
