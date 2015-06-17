@@ -3,22 +3,35 @@ package com.hisham.design;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.IntentSender;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.plus.Plus;
+import com.google.android.gms.plus.internal.model.people.PersonEntity;
 import com.google.android.gms.plus.model.people.Person;
 
+import java.io.IOException;
 import java.lang.reflect.Method;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Objects;
 
 
 /**
@@ -28,22 +41,21 @@ import java.lang.reflect.Method;
  * First get SHA-1 fingerprint on your client: https://developers.google.com/android/guides/client-auth
  * > keytool -exportcert -alias androiddebugkey -keystore C:\Users\NI-PC1\.android\debug.keystore -list -v
  * SHA1 = C2:70:D9:8A:21:96:D8:E9:64:3E:D6:08:1D:88:29:4A:59:BF:4B:A7
- *
+ * <p/>
  * Start Integrating:
  * Make Google Console Project first
  * https://developers.google.com/identity/sign-in/android/start-integrating
- *
+ * <p/>
  * REMEMBER TO ADD GOOGLE PLAY SERVICES IN build.gradle:
  * https://developers.google.com/android/guides/setup
- *
  */
 public class SocialLoginActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         View.OnClickListener {
 
+    public static final String TAG = "SocialActivity";
     /* Request code used to invoke sign in user interactions. */
     private static final int RC_SIGN_IN = 0;
-
     /* Client used to interact with Google APIs. */
     private GoogleApiClient mGoogleApiClient;
 
@@ -59,6 +71,10 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
     private boolean mIntentInProgress;
     private ProgressDialog progressDialog;
     private ListView listView;
+    private ImageView image;
+    private TextView txtDetails;
+    private View btnSignIn;
+    private Button btnLogout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,9 +88,16 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
                 .addScope(new Scope("profile"))
                 .build();
 
-        findViewById(R.id.sign_in_button).setOnClickListener(this);
-        findViewById(R.id.logout).setOnClickListener(this);
+        btnSignIn = findViewById(R.id.sign_in_button);
+        btnSignIn.setOnClickListener(this);
+        btnLogout = (Button) findViewById(R.id.logout);
+        btnLogout.setOnClickListener(this);
         listView = (ListView) findViewById(R.id.listView);
+        image = (ImageView) findViewById(R.id.imageGoogle);
+        txtDetails = (TextView) findViewById(R.id.txtUserDetails);
+
+        doIfLoggedOut();
+
     }
 
     @Override
@@ -101,6 +124,7 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
         }
 
         if (view.getId() == R.id.logout) {
+            doIfLoggedOut();
             if (mGoogleApiClient.isConnected()) {
                 mGoogleApiClient.clearDefaultAccountAndReconnect();
             }
@@ -126,9 +150,22 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
         }
     }
 
+    public void doIfLoggedIn(){
+        btnSignIn.setVisibility(View.GONE);
+        btnLogout.setVisibility(View.VISIBLE);
+    }
+
+    public void doIfLoggedOut(){
+        btnSignIn.setVisibility(View.VISIBLE);
+        btnLogout.setVisibility(View.GONE);
+    }
+
     @Override
     public void onConnected(Bundle connectionHint) {
         mSignInClicked = false;
+        String details = "";
+
+        doIfLoggedIn();
 
         if (Plus.PeopleApi.getCurrentPerson(mGoogleApiClient) != null) {
 
@@ -137,28 +174,44 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
 
             //String personPhoto = currentPerson.getImage();
             String personGooglePlusProfile = currentPerson.getUrl();
+            String imageUrl = currentPerson.getImage().getUrl();
+            //String cover = currentPerson.getCover().getCoverPhoto().getUrl();
             String email = Plus.AccountApi.getAccountName(mGoogleApiClient);
             Toast.makeText(this, "User is connected: " + personName + " | Email: " + email, Toast.LENGTH_LONG).show();
+            ArrayList<String> list = showAllMethodsWithValues(currentPerson);
+            ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, list);
+            listView.setAdapter(adapter);
+
+            if(currentPerson.hasCover())
+                new ImageLoaderTask().execute(currentPerson.getCover().getCoverPhoto().getUrl());
+
+            details = currentPerson.getDisplayName() + " \n" + email + "\n";
+            txtDetails.setText(details);
         }
     }
 
-    private void showAllMethodsWithValues(Class classObj) {
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line);
-        listView.setAdapter(adapter);
-        // Get the public methods associated with this class.
-        Method[] methods = classObj.getMethods();
-        for (Method method:methods)
-        {
-            System.out.println("Public method found: " + method.toString());
 
+    /**
+     * Returns all methods and their values using reflection.
+     *
+     * @param object
+     * @return
+     */
+    private ArrayList<String> showAllMethodsWithValues(Object object) {
+        ArrayList<String> list = new ArrayList<>();
+        // Get the public methods associated with this class.
+        Method[] methods = object.getClass().getMethods();// getDeclaredMethods();// getMethods();
+        for (Method method : methods) {
             try {
-                Object x = method.invoke(method.toString());
-                if(x instanceof String)
-                    adapter.add(method.toString() + " | " + x.toString());
+                Object x = method.invoke(object);
+                //if(x instanceof String)
+                list.add(x.toString() + " --------- " + method.toString());
+                Log.i(TAG, x.toString() + " -------- " + method.toString());
             } catch (Exception e) {
+                e.printStackTrace();
             }
         }
-        adapter.notifyDataSetChanged();
+        return list;
     }
 
     protected void onActivityResult(int requestCode, int responseCode, Intent intent) {
@@ -176,12 +229,10 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
         }
     }
 
-
     @Override
     public void onConnectionSuspended(int cause) {
         mGoogleApiClient.connect();
     }
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -203,5 +254,31 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * An Async Task to load image.
+     */
+    public class ImageLoaderTask extends AsyncTask<String, Void, Bitmap> {
+        @Override
+        protected Bitmap doInBackground(String... params) {
+            try {
+                URL url = new URL(params[0]);
+                Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
+                return bmp;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bitmap) {
+            super.onPostExecute(bitmap);
+            if(bitmap != null)
+                image.setImageBitmap(bitmap);
+        }
     }
 }
