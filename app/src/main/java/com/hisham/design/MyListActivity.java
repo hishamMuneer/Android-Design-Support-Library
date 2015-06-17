@@ -45,7 +45,7 @@ public class MyListActivity extends AppCompatActivity {
             "Coordinator Layout",
             "Collapsing Toolbars",
             "Palette Changing Colors",
-            "Social Login Example"
+            "Google Login Example"
     };
     Class[] classes = new Class[]{
             NavigationViewActivity.class,

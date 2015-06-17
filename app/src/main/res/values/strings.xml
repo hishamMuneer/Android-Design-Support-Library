@@ -29,6 +29,6 @@
     cheese caerphilly cheddar cheesecake cream cheese manchego lancashire. Roquefort squirty cheese
     the big cheese.</string>
     <string name="title_activity_pallete">PalleteActivity</string>
-    <string name="title_activity_social_login">SocialLoginActivity</string>
+    <string name="title_activity_social_login">GoogleLoginActivity</string>
 
 </resources>
