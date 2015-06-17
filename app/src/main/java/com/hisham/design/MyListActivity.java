@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.TableLayout;
 
 
 /**
@@ -45,7 +44,8 @@ public class MyListActivity extends AppCompatActivity {
             "Coordinator Layout",
             "Collapsing Toolbars",
             "Palette Changing Colors",
-            "Google Login Example"
+            "Google Login Example",
+            "Facebook Login Example"
     };
     Class[] classes = new Class[]{
             NavigationViewActivity.class,
@@ -55,7 +55,8 @@ public class MyListActivity extends AppCompatActivity {
             CoordinatorLayoutActivity.class,
             CollapsingToolbars.class,
             PaletteActivity.class,
-            SocialLoginActivity.class
+            SocialLoginActivity.class,
+            FacebookLoginActivity.class
     };
     private DrawerLayout mDrawerLayout;
 
