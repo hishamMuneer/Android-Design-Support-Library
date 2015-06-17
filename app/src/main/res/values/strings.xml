@@ -32,6 +32,11 @@
     <string name="title_activity_social_login">GoogleLoginActivity</string>
     <string name="facebook_app_id">800366663411682</string>
     <string name="title_activity_facebook_login">FacebookLoginActivity</string>
+    <string name="id">Id</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="Gender">Gender</string>
+    <string name="dob">DOB</string>
 
 
 </resources>
