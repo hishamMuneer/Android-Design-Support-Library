@@ -60,7 +60,7 @@ import java.util.Collections;
  Enter keystore password:  android
  */
 
-public class FacebookLoginActivity extends ActionBarActivity {
+public class FacebookLoginActivity extends AppCompatActivity {
 
     private CallbackManager callbackManager;
     private LoginResult loginResult;
