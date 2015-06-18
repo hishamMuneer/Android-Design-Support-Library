@@ -16,6 +16,7 @@ import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
 import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
+import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
 
@@ -31,20 +32,25 @@ import java.util.Collections;
  * and just above dependencies : repositories {mavenCentral()}
  * Create app in facebook : https://developers.facebook.com/
  * click on MyApps and create add a new app for more https://developers.facebook.com/docs/android/getting-started
- *
+ * <p/>
  * Add facebook activity in your AndroidManifest.xml
-    <activity android:name="com.facebook.FacebookActivity"
-         android:configChanges=
-         "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
-         android:theme="@android:style/Theme.Translucent.NoTitleBar"
-         android:label="@string/app_name" />
-
+ * <activity android:name="com.facebook.FacebookActivity"
+ * android:configChanges=
+ * "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
+ * android:theme="@android:style/Theme.Translucent.NoTitleBar"
+ * android:label="@string/app_name" />
+ * <p/>
  * Add Meta data in the application package  In the AndroidManifest.xml and add facebook_app_id in string file
- <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
- *
+ * <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
+ * <p/>
  * for more
  * https://developers.facebook.com/docs/facebook-login/android/v2.3
  *
+ * TO generate hash key: make sure you have openssl installed.
+ * C:\Users\NI-PC1>keytool -exportcert -alias androiddebugkey -keystore C:\Users\NI
+ -PC1\.android\debug.keystore | D:\facebook\bin\openssl sha1 -binary | D:\faceboo
+ k\bin\openssl base64
+ Enter keystore password:  android
  */
 
 public class FacebookLoginActivity extends AppCompatActivity {
@@ -97,45 +103,43 @@ public class FacebookLoginActivity extends AppCompatActivity {
                         Log.v("FacebookLoginActivity", response.toString());
                         try {
                             String id = object.getString("id");
-                            String name=object.getString("name");
-                            String email=object.getString("email");
+                            String name = object.getString("name");
+                            String email = object.getString("email");
                             String gender = object.getString("gender");
                             String birthday = object.getString("birthday");
-                            JSONObject imgJson=object.getJSONObject("picture");
-                            JSONObject imgJson1=imgJson.getJSONObject("data");
-                            String imgUrl=imgJson1.getString("url");
+                            JSONObject imgJson = object.getJSONObject("picture");
+                            JSONObject imgJson1 = imgJson.getJSONObject("data");
+                            String imgUrl = imgJson1.getString("url");
 
-                            Log.d("id",id);
-                            Log.d("name",name);
-                            Log.d("email",email);
-                            Log.d("gender",gender);
-                            Log.d("birthday",birthday);
+                            Log.d("id", id);
+                            Log.d("name", name);
+                            Log.d("email", email);
+                            Log.d("gender", gender);
+                            Log.d("birthday", birthday);
 
-                            if(id==null){
-                                id="";
+                            if (id == null) {
+                                id = "";
                             }
-                            if(name==null){
-                                name="";
+                            if (name == null) {
+                                name = "";
                             }
-                            if(email==null){
-                                email="";
+                            if (email == null) {
+                                email = "";
                             }
-                            if(gender==null){
-                                gender="";
+                            if (gender == null) {
+                                gender = "";
                             }
-                            if(birthday==null){
-                                birthday="";
+                            if (birthday == null) {
+                                birthday = "";
                             }
-                            ((TextView)findViewById(R.id.tvId)).setText(id);
-                            ((TextView)findViewById(R.id.tvEmail)).setText(email);
-                            ((TextView)findViewById(R.id.tvName)).setText(name);
-                            ((TextView)findViewById(R.id.tvGender)).setText(gender);
-                            ((TextView)findViewById(R.id.tvBday)).setText(birthday);
-                            if(imgUrl!=null){
+                            ((TextView) findViewById(R.id.tvId)).setText(id);
+                            ((TextView) findViewById(R.id.tvEmail)).setText(email);
+                            ((TextView) findViewById(R.id.tvName)).setText(name);
+                            ((TextView) findViewById(R.id.tvGender)).setText(gender);
+                            ((TextView) findViewById(R.id.tvBday)).setText(birthday);
+                            if (imgUrl != null) {
                                 new ImageLoaderTask().execute(imgUrl);
                             }
-
-
 
 
                         } catch (JSONException e) {
@@ -149,6 +153,30 @@ public class FacebookLoginActivity extends AppCompatActivity {
         request.setParameters(parameters);
         request.executeAsync();
     }
+
+
+    // Track App Installs and App Opens
+    // App Events let you measure installs on your mobile app ads, create high value audiences for targeting,
+    // and view analytics including user demographics. To log an app activation event, add the following code to the onResume()
+    // method of your app's default activity class:
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        // Logs 'install' and 'app activate' App Events.
+        AppEventsLogger.activateApp(this);
+    }
+
+    // To accurately track the time people spend in your app, you should also log a deactivate event in the onPause() method of
+    // each activity where you added the activateApp() method above:
+    @Override
+    protected void onPause() {
+        super.onPause();
+
+        // Logs 'app deactivate' App Event.
+        AppEventsLogger.deactivateApp(this);
+    }
+//    Now, when people install or engage with your app, you'll see this data reflected in your app's Insights dashboard.
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -174,10 +202,10 @@ public class FacebookLoginActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(Bitmap bitmap) {
             super.onPostExecute(bitmap);
-            if(bitmap != null)
-                ((ImageView)findViewById(R.id.ivProfile)).setImageBitmap(bitmap);
+            if (bitmap != null)
+                ((ImageView) findViewById(R.id.ivProfile)).setImageBitmap(bitmap);
         }
     }
 
-    
+
 }
