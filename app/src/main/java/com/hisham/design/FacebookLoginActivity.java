@@ -75,6 +75,7 @@ public class FacebookLoginActivity extends ActionBarActivity {
         callbackManager = CallbackManager.Factory.create();
         setContentView(R.layout.activity_facebook_login);
 
+        //for getting SHA key. it will print key on your logcat copy and paste in your facebook app and sample app
         try {
             PackageInfo info = getPackageManager().getPackageInfo("com.hisham.design",
                     PackageManager.GET_SIGNATURES);
