@@ -9,9 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageView;
 
-import static android.R.color.black;
-import static android.R.color.holo_blue_dark;
-
 /**
  * Created by faisal pc on 6/9/2015.
  *
@@ -63,8 +60,10 @@ public class CollapsingToolbars extends AppCompatActivity {
         setContentView(R.layout.activity_collaping_toolbars_layout);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        if(getSupportActionBar()!= null) {
+            setSupportActionBar(toolbar);
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        }
 //        getSupportActionBar().setHomeButtonEnabled(true);
 
         CollapsingToolbarLayout collapsingToolbar =

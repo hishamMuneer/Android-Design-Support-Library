@@ -1,5 +1,6 @@
 package com.hisham.design;
 
+import android.os.Build;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,7 +12,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -36,46 +36,46 @@ import java.util.ArrayList;
  */
 public class CoordinatorLayoutActivity extends AppCompatActivity {
 
-    String objects[] = new String[]{
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-            "Text here",
-//            "Elevation Sample",
-//            "Sliding Example",
-//            "Transition"
-    };
+// --Commented out by Inspection START (6/18/2015 12:46 PM):
+//    String objects[] = new String[]{
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+//            "Text here",
+////            "Elevation Sample",
+////            "Sliding Example",
+////            "Transition"
+//    };
+// --Commented out by Inspection STOP (6/18/2015 12:46 PM)
 
-    ListView myListViewBgCo;
-    private FloatingActionButton floatingButtonCo;
-    private View parentLayoutCo;
+    //    private View parentLayoutCo;
     private CoordinatorLayout coordinatorLayout;
-    private ArrayList<String> list = new ArrayList<>();
+    private final ArrayList<String> list = new ArrayList<>();
     private ArrayAdapter<String> adapter;
     private String lastItem;
     private int lastPosition;
@@ -89,7 +89,7 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
             list.add("Text Item: " + i);
         }
 
-        myListViewBgCo = (ListView) findViewById(R.id.myListViewBg);
+        ListView myListViewBgCo = (ListView) findViewById(R.id.myListViewBg);
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, list);
         myListViewBgCo.setAdapter(adapter);
 
@@ -114,10 +114,11 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
 
         coordinatorLayout = (CoordinatorLayout)findViewById(R.id.coordinatorLayout);
 
-        floatingButtonCo = (FloatingActionButton)findViewById(R.id.floatingButton);
-        floatingButtonCo.setElevation(85f);
+        FloatingActionButton floatingButtonCo = (FloatingActionButton) findViewById(R.id.floatingButton);
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+            floatingButtonCo.setElevation(85f);
 
-        parentLayoutCo = findViewById(R.id.parentLayout);
+//        parentLayoutCo = findViewById(R.id.parentLayout);
 
         floatingButtonCo.setOnClickListener(new View.OnClickListener() {
             @Override

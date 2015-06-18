@@ -35,8 +35,7 @@ public class MyListActivity extends AppCompatActivity {
 
     // test
 
-    ListView myListView;
-    String objects[] = new String[]{
+    private final String[] objects = new String[]{
             "NavigationView",
             "Floating Label (EditText) Sample",
             "Floating Action Button And SnackBar Sample",
@@ -47,7 +46,7 @@ public class MyListActivity extends AppCompatActivity {
             "Google Login Example",
             "Facebook Login Example"
     };
-    Class[] classes = new Class[]{
+    private final Class[] classes = new Class[]{
             NavigationViewActivity.class,
             TextInputLayoutActivity.class,
             FloatingActionButtonActivity.class,
@@ -66,8 +65,10 @@ public class MyListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_my_list);
 
         final ActionBar ab = getSupportActionBar();
-        ab.setHomeAsUpIndicator(R.drawable.ic_menu);
-        ab.setDisplayHomeAsUpEnabled(true);
+        if(ab!=null) {
+            ab.setHomeAsUpIndicator(R.drawable.ic_menu);
+            ab.setDisplayHomeAsUpEnabled(true);
+        }
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 
@@ -75,7 +76,7 @@ public class MyListActivity extends AppCompatActivity {
         mDrawerLayout.setDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
 
-        myListView = (ListView)findViewById(R.id.myListView);
+        ListView myListView = (ListView) findViewById(R.id.myListView);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_dropdown_item_1line, objects);
         myListView.setAdapter(adapter);
 

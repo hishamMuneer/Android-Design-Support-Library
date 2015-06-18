@@ -37,6 +37,13 @@
     <string name="email">Email</string>
     <string name="Gender">Gender</string>
     <string name="dob">DOB</string>
+    <string name="info">Info</string>
+    <string name="freinds">Friends</string>
+    <string name="related">Related</string>
+    <string name="press_me">Press Me</string>
+    <string name="color_change_message">Color of this text changes base on color along with the background color. Click on Image for more</string>
+    <string name="disconnect_account">Disconnect Account</string>
+    <string name="user_details">User Details:</string>
 
 
 </resources>

@@ -27,7 +27,7 @@ import android.view.View;
  */
 public class TextInputLayoutActivity extends AppCompatActivity {
 
-    TextInputLayout textInputLayout;
+    private TextInputLayout textInputLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

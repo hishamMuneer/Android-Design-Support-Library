@@ -1,15 +1,13 @@
 package com.hisham.design;
 
-import android.content.Intent;
+import android.os.Build;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -36,7 +34,7 @@ import android.widget.ListView;
  */
 public class FloatingActionButtonActivity extends AppCompatActivity {
 
-    String objects[] = new String[]{
+    private final String[] objects = new String[]{
             "Text here",
             "Text here",
             "Text here",
@@ -71,8 +69,6 @@ public class FloatingActionButtonActivity extends AppCompatActivity {
 //            "Transition"
     };
 
-    ListView myListView;
-    private FloatingActionButton floatingButon;
     private View parentLayout;
 
     @Override
@@ -80,16 +76,18 @@ public class FloatingActionButtonActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_floating_action_button);
 
-        myListView = (ListView) findViewById(R.id.myListViewBg);
+        ListView myListView = (ListView) findViewById(R.id.myListViewBg);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_dropdown_item_1line, objects);
         myListView.setAdapter(adapter);
 
-        floatingButon = (FloatingActionButton)findViewById(R.id.floatingButton);
-        floatingButon.setElevation(85f);
+        FloatingActionButton floatingButton = (FloatingActionButton) findViewById(R.id.floatingButton);
+        // Elevation can only be used if api level is 21 or greater.
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+            floatingButton.setElevation(85f);
 
         parentLayout = findViewById(R.id.parentLayout);
 
-        floatingButon.setOnClickListener(new View.OnClickListener() {
+        floatingButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 final Snackbar snackbar = Snackbar.make(parentLayout, "You just clicked", Snackbar.LENGTH_LONG);

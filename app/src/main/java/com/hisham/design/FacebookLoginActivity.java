@@ -1,6 +1,5 @@
 package com.hisham.design;
 
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -8,11 +7,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
@@ -21,15 +18,13 @@ import com.facebook.GraphRequest;
 import com.facebook.GraphResponse;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
-import com.google.android.gms.appdatasearch.GetRecentContextCall;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Arrays;
+import java.util.Collections;
 
 /**
  * Make sure you have facebook sdk : app > build.gradle > dependencies > compile 'com.facebook.android:facebook-android-sdk:4.1.0'
@@ -54,8 +49,7 @@ import java.util.Arrays;
 
 public class FacebookLoginActivity extends AppCompatActivity {
 
-    private LoginButton loginButton;
-    CallbackManager callbackManager;
+    private CallbackManager callbackManager;
     private LoginResult loginResult;
 
     @Override
@@ -68,16 +62,16 @@ public class FacebookLoginActivity extends AppCompatActivity {
 
         //initialize callback manager
         callbackManager = CallbackManager.Factory.create();
-        loginButton = (LoginButton)findViewById(R.id.login_button);
+        LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
 
         //define permissions
-        loginButton.setReadPermissions(Arrays.asList("public_profile, email, user_birthday, user_friends"));
+        loginButton.setReadPermissions(Collections.singletonList("public_profile, email, user_birthday, user_friends"));
 
         // Callback registration
         loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(LoginResult mLoginResult) {
-                Log.d("Access Token",mLoginResult.getAccessToken().toString());
+                Log.d("Access Token", mLoginResult.getAccessToken().toString());
                 Log.d("User Id", mLoginResult.getAccessToken().getUserId());
                 loginResult = mLoginResult;
                 fetchUserInfo();
@@ -165,15 +159,12 @@ public class FacebookLoginActivity extends AppCompatActivity {
     /**
      * An Async Task to load image.
      */
-    public class ImageLoaderTask extends AsyncTask<String, Void, Bitmap> {
+    private class ImageLoaderTask extends AsyncTask<String, Void, Bitmap> {
         @Override
         protected Bitmap doInBackground(String... params) {
             try {
                 URL url = new URL(params[0]);
-                Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                return bmp;
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
+                return BitmapFactory.decodeStream(url.openConnection().getInputStream());
             } catch (IOException e) {
                 e.printStackTrace();
             }

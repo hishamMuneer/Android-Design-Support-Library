@@ -23,15 +23,12 @@ import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Scope;
 import com.google.android.gms.plus.Plus;
-import com.google.android.gms.plus.internal.model.people.PersonEntity;
 import com.google.android.gms.plus.model.people.Person;
 
 import java.io.IOException;
 import java.lang.reflect.Method;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Objects;
 
 
 /**
@@ -53,7 +50,7 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
         GoogleApiClient.OnConnectionFailedListener,
         View.OnClickListener {
 
-    public static final String TAG = "SocialActivity";
+    private static final String TAG = "SocialActivity";
     /* Request code used to invoke sign in user interactions. */
     private static final int RC_SIGN_IN = 0;
     /* Client used to interact with Google APIs. */
@@ -150,12 +147,12 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
         }
     }
 
-    public void doIfLoggedIn(){
+    private void doIfLoggedIn(){
         btnSignIn.setVisibility(View.GONE);
         btnLogout.setVisibility(View.VISIBLE);
     }
 
-    public void doIfLoggedOut(){
+    private void doIfLoggedOut(){
         btnSignIn.setVisibility(View.VISIBLE);
         btnLogout.setVisibility(View.GONE);
     }
@@ -163,7 +160,7 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
     @Override
     public void onConnected(Bundle connectionHint) {
         mSignInClicked = false;
-        String details = "";
+        String details;
 
         doIfLoggedIn();
 
@@ -173,8 +170,8 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
             String personName = currentPerson.getDisplayName();
 
             //String personPhoto = currentPerson.getImage();
-            String personGooglePlusProfile = currentPerson.getUrl();
-            String imageUrl = currentPerson.getImage().getUrl();
+           // String personGooglePlusProfile = currentPerson.getUrl();
+           // String imageUrl = currentPerson.getImage().getUrl();
             //String cover = currentPerson.getCover().getCoverPhoto().getUrl();
             String email = Plus.AccountApi.getAccountName(mGoogleApiClient);
             Toast.makeText(this, "User is connected: " + personName + " | Email: " + email, Toast.LENGTH_LONG).show();
@@ -194,8 +191,8 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
     /**
      * Returns all methods and their values using reflection.
      *
-     * @param object
-     * @return
+     * @param object - pass your object
+     * @return arraylist of string with method value and maehod name in it.
      */
     private ArrayList<String> showAllMethodsWithValues(Object object) {
         ArrayList<String> list = new ArrayList<>();
@@ -259,15 +256,12 @@ public class SocialLoginActivity extends AppCompatActivity implements GoogleApiC
     /**
      * An Async Task to load image.
      */
-    public class ImageLoaderTask extends AsyncTask<String, Void, Bitmap> {
+    private class ImageLoaderTask extends AsyncTask<String, Void, Bitmap> {
         @Override
         protected Bitmap doInBackground(String... params) {
             try {
                 URL url = new URL(params[0]);
-                Bitmap bmp = BitmapFactory.decodeStream(url.openConnection().getInputStream());
-                return bmp;
-            } catch (MalformedURLException e) {
-                e.printStackTrace();
+                return BitmapFactory.decodeStream(url.openConnection().getInputStream());
             } catch (IOException e) {
                 e.printStackTrace();
             }

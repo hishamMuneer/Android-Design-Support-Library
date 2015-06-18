@@ -2,8 +2,6 @@ package com.hisham.design;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.graphics.Palette;
@@ -18,12 +16,12 @@ import java.util.Random;
 
 public class PaletteActivity extends AppCompatActivity {
 
-    private int images[] = new int[]{R.drawable.i1, R.drawable.i2, R.drawable.i3, R.drawable.i4,
+    private final int[] images = new int[]{R.drawable.i1, R.drawable.i2, R.drawable.i3, R.drawable.i4,
             R.drawable.i5, R.drawable.i6, R.drawable.i7, R.drawable.i10, R.drawable.koala, R.drawable.tulips};
     private TextView tvLabel;
     private ImageView imageView;
     private View relativeParent;
-    private View.OnClickListener colorChanger = new View.OnClickListener() {
+    private final View.OnClickListener colorChanger = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
 

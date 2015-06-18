@@ -109,19 +109,19 @@ import android.widget.Toast;
  */
 public class NavigationViewActivity extends AppCompatActivity {
 
-    public static String TAG = NavigationViewActivity.class.getSimpleName();
-    private NavigationView navigationView;
+    private static final String TAG = NavigationViewActivity.class.getSimpleName();
     private DrawerLayout drawerLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        navigationView = (NavigationView) findViewById(R.id.navigationView);
+        NavigationView navigationView = (NavigationView) findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(navigationItemSelectedListener);
         drawerLayout = (DrawerLayout)findViewById(R.id.drawerLayout);
 
         final ActionBar ab = getSupportActionBar();
+        assert ab != null;
         ab.setHomeAsUpIndicator(R.drawable.ic_menu);
         ab.setDisplayHomeAsUpEnabled(true);
 
@@ -137,7 +137,7 @@ public class NavigationViewActivity extends AppCompatActivity {
         return true;
     }
 
-    NavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = new NavigationView.OnNavigationItemSelectedListener() {
+    private final NavigationView.OnNavigationItemSelectedListener navigationItemSelectedListener = new NavigationView.OnNavigationItemSelectedListener() {
         @Override
         public boolean onNavigationItemSelected(MenuItem menuItem) {
 
@@ -174,7 +174,7 @@ public class NavigationViewActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if(android.R.id.home == id) {
+        if (android.R.id.home == id) {
             if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
                 drawerLayout.closeDrawer(GravityCompat.START);
             } else {
@@ -182,10 +182,7 @@ public class NavigationViewActivity extends AppCompatActivity {
             }
         }
 
-        if (id == R.id.action_settings) {
-            return true;
-        }
+        return id == R.id.action_settings || super.onOptionsItemSelected(item);
 
-        return super.onOptionsItemSelected(item);
     }
 }

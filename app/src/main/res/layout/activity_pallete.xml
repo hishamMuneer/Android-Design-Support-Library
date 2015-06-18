@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:gravity="center_horizontal"
-        android:text="Color of this text changes base on color along with the background color. Click on Image for more"
+        android:text="@string/color_change_message"
         android:textColor="#5f5f5f"
         android:textSize="30sp"
         android:textStyle="bold"
