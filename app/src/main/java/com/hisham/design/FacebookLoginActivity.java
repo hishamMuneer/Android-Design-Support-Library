@@ -107,13 +107,11 @@ public class FacebookLoginActivity extends ActionBarActivity {
 
             @Override
             public void onCancel() {
-                Toast.makeText(getApplicationContext(),"",Toast.LENGTH_LONG).show();
                 Log.e("facebookcancel","cancel");
             }
 
             @Override
             public void onError(FacebookException exception) {
-                Toast.makeText(getApplicationContext(),"",Toast.LENGTH_LONG).show();
                 Log.e("facebookerror",exception+"");
             }
         });
