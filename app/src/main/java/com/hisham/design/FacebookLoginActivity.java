@@ -1,14 +1,21 @@
 package com.hisham.design;
 
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.Signature;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.v4.app.FragmentActivity;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Base64;
 import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -19,12 +26,12 @@ import com.facebook.GraphResponse;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
-
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.net.URL;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Collections;
 
 /**
@@ -53,7 +60,7 @@ import java.util.Collections;
  Enter keystore password:  android
  */
 
-public class FacebookLoginActivity extends AppCompatActivity {
+public class FacebookLoginActivity extends ActionBarActivity {
 
     private CallbackManager callbackManager;
     private LoginResult loginResult;
@@ -64,10 +71,24 @@ public class FacebookLoginActivity extends AppCompatActivity {
 
         //initialize facebook sdk
         FacebookSdk.sdkInitialize(getApplicationContext());
-        setContentView(R.layout.activity_facebook_login);
-
         //initialize callback manager
         callbackManager = CallbackManager.Factory.create();
+        setContentView(R.layout.activity_facebook_login);
+
+        try {
+            PackageInfo info = getPackageManager().getPackageInfo("com.hisham.design",
+                    PackageManager.GET_SIGNATURES);
+            for (Signature signature : info.signatures) {
+                MessageDigest md = MessageDigest.getInstance("SHA");
+                md.update(signature.toByteArray());
+                Log.i("Digest: ", Base64.encodeToString(md.digest(), 0));
+            }
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.e("Test", e.getMessage());
+        } catch (NoSuchAlgorithmException e) {
+            Log.e("Test", e.getMessage());
+        }
+
         LoginButton loginButton = (LoginButton) findViewById(R.id.login_button);
 
         //define permissions
@@ -85,12 +106,14 @@ public class FacebookLoginActivity extends AppCompatActivity {
 
             @Override
             public void onCancel() {
-                // App code
+                Toast.makeText(getApplicationContext(),"",Toast.LENGTH_LONG).show();
+                Log.e("facebookcancel","cancel");
             }
 
             @Override
             public void onError(FacebookException exception) {
-                // App code
+                Toast.makeText(getApplicationContext(),"",Toast.LENGTH_LONG).show();
+                Log.e("facebookerror",exception+"");
             }
         });
     }
@@ -206,6 +229,4 @@ public class FacebookLoginActivity extends AppCompatActivity {
                 ((ImageView) findViewById(R.id.ivProfile)).setImageBitmap(bitmap);
         }
     }
-
-
 }
