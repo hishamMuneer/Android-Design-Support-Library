@@ -45,6 +45,12 @@ import java.util.Collections;
  * <p/>
  * for more
  * https://developers.facebook.com/docs/facebook-login/android/v2.3
+ *
+ * TO generate hash key: make sure you have openssl installed.
+ * C:\Users\NI-PC1>keytool -exportcert -alias androiddebugkey -keystore C:\Users\NI
+ -PC1\.android\debug.keystore | D:\facebook\bin\openssl sha1 -binary | D:\faceboo
+ k\bin\openssl base64
+ Enter keystore password:  android
  */
 
 public class FacebookLoginActivity extends AppCompatActivity {

@@ -37,7 +37,7 @@ import java.util.ArrayList;
  * Get Configuration File:
  * First get SHA-1 fingerprint on your client: https://developers.google.com/android/guides/client-auth
  * > keytool -exportcert -alias androiddebugkey -keystore C:\Users\NI-PC1\.android\debug.keystore -list -v
- * SHA1 = C2:70:D9:8A:21:96:D8:E9:64:3E:D6:08:1D:88:29:4A:59:BF:4B:A7
+ * SHA1 Sample = C2:70:D9:8A:21:66:D8:E9:64:84:D6:87:1D:88:29:4A:59:BF:4B:A7
  * <p/>
  * Start Integrating:
  * Make Google Console Project first
