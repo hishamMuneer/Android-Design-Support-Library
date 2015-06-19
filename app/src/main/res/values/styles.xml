@@ -2,7 +2,11 @@
 
     <!--https://developer.android.com/training/material/theme.html-->
     <!--http://www.google.co.in/design/spec/style/color.html#color-ui-color-application-->
-    <style name="AppTheme" parent="Theme.AppCompat.Light">
+    <style name="AppTheme" parent="AppTheme.Base">
+
+    </style>
+
+    <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Main theme colors -->
         <!--   your app branding color for the app bar -->
         <item name="colorPrimary">@color/primary</item>
@@ -15,7 +19,7 @@
 
         <item name="android:textColorPrimary">@color/primary_text</item>
 
-        <item name="android:textColorSecondary">@color/secondary_text</item>
+        <!--<item name="android:textColorSecondary">@color/secondary_text</item>-->
 
         <!--Color of text in the app-->
         <!--<item name="android:textColorPrimary">@color/textColorPrimary</item>-->
@@ -25,7 +29,6 @@
         <!--<item name="drawerArrowStyle">@style/DrawerArrowStyle</item>-->
         <!--<item name="android:textColor">@color/material_blue_grey_800</item>-->
         <!--<item name="android:textColorSecondary">@android:color/primary_text_dark</item>-->
-
     </style>
 
     <style name="Widget.CardContent" parent="android:Widget">

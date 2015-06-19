@@ -2,26 +2,26 @@
 <resources>
     <!--https://developer.android.com/training/material/theme.html-->
     <!--http://www.google.co.in/design/spec/style/color.html#color-ui-color-application-->
-    <style name="AppTheme" parent="Theme.AppCompat.Light">
+    <style name="AppTheme" parent="AppTheme.Base">
         <!-- Main theme colors -->
         <!--   your app branding color for the app bar -->
-        <item name="colorPrimary">@color/primary</item>
+        <!--<item name="android:colorPrimary">@color/primary</item>-->
         <!--   darker variant for the status bar and contextual app bars -->
-        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <!--<item name="android:colorPrimaryDark">@color/primary_dark</item>-->
 
         <!--   theme UI controls like checkboxes and text fields -->
-        <item name="colorAccent">@color/accent</item>
+        <!--<item name="android:colorAccent">@color/accent</item>-->
 
-        <item name="android:textColorPrimary">@color/primary_text</item>
+        <!--<item name="android:textColorPrimary">@color/primary_text</item>-->
 
-        <item name="android:textColorSecondary">@color/secondary_text</item>
+        <!--<item name="android:textColorSecondary">@color/secondary_text</item>-->
 
         <!--Color of text in the app-->
         <!--<item name="android:textColorPrimary">@color/textColorPrimary</item>-->
         <!--Background color of all activities-->
         <!--<item name="android:windowBackground">@color/windowBG</item>-->
         <!--The color soft NavigationBar that has home button-->
-        <!--<item name="android:navigationBarColor">#2472E8</item>-->
+        <item name="android:navigationBarColor">@color/primary_dark</item>
         <!-- If you want to display Drawer to Arrow transition -->
         <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
         <!--<item name="android:textColor">@color/material_blue_grey_800</item>-->
