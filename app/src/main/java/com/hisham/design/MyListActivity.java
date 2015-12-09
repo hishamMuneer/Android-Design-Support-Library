@@ -16,11 +16,13 @@ import android.widget.ListView;
 
 
 /**
- * How to implement DrawerArrowToggle from Android appcompat v7 21 library
+ * How to implement DrawerArrowToggle from Android appcompat - v7 - 21 - library. <br />
+ * <h3>Steps: </h3>
  *
- * Steps:
+ * <pre class="prettyprint">
  *
- * final ActionBar ab = getSupportActionBar();
+
+ final ActionBar ab = getSupportActionBar();
  ab.setHomeAsUpIndicator(R.drawable.ic_menu);
  ab.setDisplayHomeAsUpEnabled(true);
 
@@ -29,6 +31,51 @@ import android.widget.ListView;
  ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.string.open, R.string.close);
  mDrawerLayout.setDrawerListener(actionBarDrawerToggle);
  actionBarDrawerToggle.syncState();
+
+ // Override the onOptionsItemSelected so that on selecting the burger icon, navigation drawer should open.
+ // Burger icon should be present in the drawable folder. ex: ic_menu.png
+
+ public boolean onOptionsItemSelected(MenuItem item) {
+     switch (item.getItemId()) {
+         case android.R.id.home:
+             if(mDrawerLayout.isDrawerOpen(GravityCompat.START)){
+                mDrawerLayout.closeDrawer(GravityCompat.START);
+             } else {
+                mDrawerLayout.openDrawer(GravityCompat.START);
+             }
+         return true;
+     }
+     return super.onOptionsItemSelected(item);
+ }
+ </pre>
+
+ <p>Code for xml layout: </p>
+
+ <pre class="prettyprint">
+ &lt;android.support.v4.widget.DrawerLayout
+ xmlns:android="http://schemas.android.com/apk/res/android"
+ xmlns:app="http://schemas.android.com/apk/res-auto"
+ android:id="@+id/drawer_layout"
+ android:layout_height="match_parent"
+ android:layout_width="match_parent"
+ android:fitsSystemWindows="true"&gt;
+ &lt;!--Whatever you want to display in the middle goes here--&gt;
+ &lt;ListView
+ android:id="@+id/myListView"
+ android:layout_width="match_parent"
+ android:layout_height="match_parent"&gt;
+ &lt;/ListView>
+ &lt;!-- ENDS - Whatever you want to display in the middle goes here--&gt;
+ &lt;android.support.design.widget.NavigationView
+ android:id="@+id/nav_view"
+ android:layout_height="match_parent"
+ android:layout_width="wrap_content"
+ android:layout_gravity="start"
+ android:fitsSystemWindows="false"
+ app:menu="@menu/menu_home"/&gt;
+
+ &lt;/android.support.v4.widget.DrawerLayout&gt;
+</pre>
  *
  */
 public class MyListActivity extends AppCompatActivity {
@@ -44,7 +91,8 @@ public class MyListActivity extends AppCompatActivity {
             "Collapsing Toolbars",
             "Palette Changing Colors",
             "Google Login Example",
-            "Facebook Login Example"
+            "Facebook Login Example",
+            "Data Binding Example"
     };
     private final Class[] classes = new Class[]{
             NavigationViewActivity.class,
@@ -55,7 +103,8 @@ public class MyListActivity extends AppCompatActivity {
             CollapsingToolbars.class,
             PaletteActivity.class,
             SocialLoginActivity.class,
-            FacebookLoginActivity.class
+            FacebookLoginActivity.class,
+            DataBindingActivity.class
     };
     private DrawerLayout mDrawerLayout;
 

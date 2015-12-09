@@ -17,10 +17,17 @@ import java.util.ArrayList;
 
 /**
  * CoordinatorLayout, motion, and scrolling
- Distinctive visuals are only one part of material design: motion is also an important part of making a great material designed app. While there are a lot of parts of motion in material design including touch ripples and meaningful transitions, the Design library introduces CoordinatorLayout, a layout which provides an additional level of control over touch events between child views, something which many of the components in the Design library take advantage of.
+ Distinctive visuals are only one part of material design: motion is also an important part of making a great material designed app.
+ While there are a lot of parts of motion in material design including touch ripples and meaningful transitions,
+ the Design library introduces CoordinatorLayout, a layout which provides an additional level of control over touch events
+ between child views, something which many of the components in the Design library take advantage of.
 
  CoordinatorLayout and floating action buttons
- A great example of this is when you add a FloatingActionButton as a child of your CoordinatorLayout and then pass that CoordinatorLayout to your Snackbar.make() call - instead of the snackbar displaying over the floating action button, the FloatingActionButton takes advantage of additional callbacks provided by CoordinatorLayout to automatically move upward as the snackbar animates in and returns to its lastPosition when the snackbar animates out on Android 3.0 and higher devices - no extra code required.
+ A great example of this is when you add a FloatingActionButton as a child of your CoordinatorLayout and then pass that
+ CoordinatorLayout to your Snackbar.make() call - instead of the snackbar displaying over the floating action button,
+ the FloatingActionButton takes advantage of additional callbacks provided by CoordinatorLayout to automatically move
+ upward as the snackbar animates in and returns to its lastPosition when the snackbar animates out on Android 3.0
+ and higher devices - no extra code required.
 
  SnackBar
  * <pre class="prettyprint">
@@ -116,7 +123,7 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
 
         FloatingActionButton floatingButtonCo = (FloatingActionButton) findViewById(R.id.floatingButton);
         if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-            floatingButtonCo.setElevation(85f);
+            floatingButtonCo.setElevation(3);
 
 //        parentLayoutCo = findViewById(R.id.parentLayout);
 
@@ -126,27 +133,5 @@ public class CoordinatorLayoutActivity extends AppCompatActivity {
                 Snackbar.make(coordinatorLayout, "You clicked on floating button.", Snackbar.LENGTH_LONG).show();
             }
         });
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_floating_action_button, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar lastItem clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
     }
 }

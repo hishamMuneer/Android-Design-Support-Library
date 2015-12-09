@@ -5,8 +5,18 @@
     <string name="action_settings">Settings</string>
     <string name="header_text">This is Header</string>
     <string name="title_activity_my_list">MyListActivity</string>
+
     <string name="item_1">Item 1</string>
     <string name="item_2">Item 2</string>
+    <string name="login">Login</string>
+    <string name="wishlist">Wishlist</string>
+    <string name="track">Track Order</string>
+    <string name="invite">Invite and Earn</string>
+    <string name="rate">Rate the App</string>
+    <string name="help">Help Centre</string>
+    <string name="legal">Legal</string>
+    <string name="returns">Returns Policy</string>
+    <string name="privacy">Privacy Policy</string>
 
     <string name="close">Close</string>
     <string name="open">Open</string>
@@ -44,6 +54,19 @@
     <string name="color_change_message">Color of this text changes base on color along with the background color. Click on Image for more</string>
     <string name="disconnect_account">Disconnect Account</string>
     <string name="user_details">User Details:</string>
+    <string name="mobile">Mobiles</string>
+    <string name="tv">Televisions</string>
+    <string name="televisions">Televisions</string>
+    <string name="large_appliances">Large Appliances</string>
+    <string name="refrigrators">Refrigrators</string>
+    <string name="air_conditioners">Air Conditioners</string>
+    <string name="title_activity_data_binding">DataBindingActivity</string>
 
 
+    <string name="no_first_name">Not Found</string>
+    <string name="view_visible">View is Visible</string>
+    <string name="ranjeet">Ranjeet</string>
+    <string name="singh">Singh</string>
+    <string name="no">No</string>
+    <string name="info_data_binding">This data is being loaded using Data Binding. \n\nNotice that no findViewById is used to set the text on the TextView and TextViews don\'t even have ids defined.</string>
 </resources>

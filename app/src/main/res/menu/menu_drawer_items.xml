@@ -1,0 +1,36 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_item_mobile"
+            android:checked="true"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/mobile" />
+        <item
+            android:id="@+id/navigation_item_televisions"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/televisions" />
+
+    </group>
+
+
+
+    <item
+        android:id="@+id/navigation_subheader_large_appliances"
+        android:title="@string/large_appliances">
+        <menu>
+            <item
+                android:id="@+id/navigation_sub_item_refrigrators"
+                android:icon="@mipmap/ic_launcher"
+                android:title="@string/refrigrators"/>
+            <item
+                android:id="@+id/navigation_sub_item_air_conditioners"
+                android:icon="@mipmap/ic_launcher"
+                android:title="@string/air_conditioners"/>
+        </menu>
+    </item>
+
+</menu>

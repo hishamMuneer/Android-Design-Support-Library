@@ -142,16 +142,21 @@ public class NavigationViewActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(MenuItem menuItem) {
 
             switch (menuItem.getItemId()){
-                case R.id.navigation_item_1:
-                case R.id.navigation_item_2:
-                case R.id.navigation_item_3:
-                case R.id.navigation_item_4:
-                case R.id.navigation_item_5:
-                case R.id.navigation_item_6:
-                case R.id.navigation_item_7:
-                case R.id.navigation_item_8:
+
+                // Radio Items
+                case R.id.navigation_item_mobile:
+                case R.id.navigation_item_televisions:
                     menuItem.setChecked(true);
                     break;
+
+                // Sub-Header
+                case R.id.navigation_subheader_large_appliances:
+                    break;
+                // Sub-Header Items
+                case R.id.navigation_sub_item_refrigrators:
+                case R.id.navigation_sub_item_air_conditioners:
+                    break;
+
             }
 
             Log.e(TAG, menuItem.getItemId() + " : " + menuItem.getTitle());

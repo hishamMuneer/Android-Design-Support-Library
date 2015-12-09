@@ -3,47 +3,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity">
 
-    <group android:checkableBehavior="single">
+    <!--<group android:checkableBehavior="single">-->
         <item
-            android:id="@+id/navigation_item_1"
+            android:id="@+id/navigation_item_login"
+            android:icon="@null"
+            android:title="@string/login" />
+        <item
+            android:id="@+id/navigation_item_wishlist"
+            android:icon="@mipmap/ic_launcher"
+            android:title="@string/wishlist" />
+
+
+        <item
+            android:id="@+id/navigation_item_track"
             android:checked="true"
             android:icon="@mipmap/ic_launcher"
-            android:title="@string/item_1" />
+            android:title="@string/track" />
         <item
-            android:id="@+id/navigation_item_2"
+            android:id="@+id/navigation_item_invite"
             android:icon="@mipmap/ic_launcher"
-            android:title="@string/item_2" />
+            android:title="@string/invite" />
 
 
         <item
-            android:id="@+id/navigation_item_3"
+            android:id="@+id/navigation_item_rate"
             android:icon="@mipmap/ic_launcher"
-            android:title="@string/item_1" />
+            tools:showAsAction="withText"
+            android:title="@string/rate" />
         <item
-            android:id="@+id/navigation_item_4"
+            android:id="@+id/navigation_item_help"
             android:icon="@mipmap/ic_launcher"
-            android:title="@string/item_2" />
-
-
-        <item
-            android:id="@+id/navigation_item_5"
-            android:icon="@mipmap/ic_launcher"
-            android:title="@string/item_1" />
-        <item
-            android:id="@+id/navigation_item_6"
-            android:icon="@mipmap/ic_launcher"
-            android:title="@string/item_2" />
-
-
-        <item
-            android:id="@+id/navigation_item_7"
-            android:icon="@mipmap/ic_launcher"
-            android:title="@string/item_1" />
-        <item
-            android:id="@+id/navigation_item_8"
-            android:icon="@mipmap/ic_launcher"
-            android:title="@string/item_2" />
-    </group>
+            android:title="@string/help" />
+    <!--</group>-->
 
     <item
         android:id="@+id/action_settings"
@@ -53,17 +44,17 @@
 
 
     <item
-        android:id="@+id/navigation_subheader"
-        android:title="@string/sub_header">
+        android:id="@+id/navigation_subheader_legal"
+        android:title="@string/legal">
         <menu>
             <item
-                android:id="@+id/navigation_sub_item_1"
+                android:id="@+id/navigation_sub_item_privacy"
                 android:icon="@mipmap/ic_launcher"
-                android:title="@string/sub_item_1"/>
+                android:title="@string/privacy"/>
             <item
-                android:id="@+id/navigation_sub_item_2"
+                android:id="@+id/navigation_sub_item_returns"
                 android:icon="@mipmap/ic_launcher"
-                android:title="@string/sub_item_2"/>
+                android:title="@string/returns"/>
         </menu>
     </item>
 
