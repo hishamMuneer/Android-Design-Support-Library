@@ -55,13 +55,13 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Cu
         customViewHolder.textView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                callAppropriateCode(i);
+                callAppropriateCode(i+1);
             }
         });
         customViewHolder.imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                callAppropriateCode(i);
+                callAppropriateCode(i+1);
             }
         });
 

@@ -39,10 +39,10 @@ public class BaseActivity extends AppCompatActivity {
                 setTheme(R.style.AppThemeThree);
                 break;
             case AppConstent.THEME_FOUR:
-                setTheme(R.style.AppThemeThree);
+                setTheme(R.style.AppThemeFour);
                 break;
             case AppConstent.THEME_FIVE:
-                setTheme(R.style.AppThemeThree);
+                setTheme(R.style.AppThemeFive);
                 break;
             default:
                 setTheme(R.style.AppTheme);

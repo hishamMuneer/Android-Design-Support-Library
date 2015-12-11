@@ -107,7 +107,7 @@ import android.widget.Toast;
  }
  *
  */
-public class NavigationViewActivity extends AppCompatActivity {
+public class NavigationViewActivity extends BaseActivity {
 
     private static final String TAG = NavigationViewActivity.class.getSimpleName();
     private DrawerLayout drawerLayout;

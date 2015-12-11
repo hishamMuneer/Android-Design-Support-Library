@@ -52,7 +52,7 @@ import android.widget.ImageView;
  </div>
  *
  */
-public class CollapsingToolbars extends BaseActivity {
+public class CollapsingToolbars extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

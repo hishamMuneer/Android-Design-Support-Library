@@ -25,7 +25,7 @@ import android.view.View;
  android:hint="@string/hint_float_label" />
  </android.support.design.widget.TextInputLayout>
  */
-public class TextInputLayoutActivity extends AppCompatActivity {
+public class TextInputLayoutActivity extends BaseActivity {
 
     private TextInputLayout textInputLayout;
 
