@@ -41,7 +41,7 @@ import java.util.ArrayList;
  * }).show();
  * </pre>
  */
-public class CoordinatorLayoutActivity extends AppCompatActivity {
+public class CoordinatorLayoutActivity extends BaseActivity {
 
 // --Commented out by Inspection START (6/18/2015 12:46 PM):
 //    String objects[] = new String[]{

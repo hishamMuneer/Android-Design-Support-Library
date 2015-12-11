@@ -30,7 +30,7 @@ import com.hisham.design.model.User;
 
 
  */
-public class DataBindingActivity extends AppCompatActivity {
+public class DataBindingActivity extends BaseActivity {
 
     private ActivityDataBindingBinding binding;
 

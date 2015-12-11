@@ -15,4 +15,26 @@
     <color name="windowBG">#FF5F5F5F</color>
     <color name="textColorPrimary">#5f5f5f</color>
     <color name="transparent">#00000000</color>
+
+
+
+    <color name="primary_dark_one">#C2185B</color>
+    <color name="primary_one">#E91E63</color>
+    <color name="accent_one">#03A9F4</color>
+
+    <color name="primary_dark_two">#FBC02D</color>
+    <color name="primary_two">#FFEB3B</color>
+    <color name="accent_two">#E040FB</color>
+
+    <color name="primary_dark_three">#E64A19</color>
+    <color name="primary_three">#E64A19</color>
+    <color name="accent_three">#795548</color>
+
+    <color name="primary_dark_four">#388E3C</color>
+    <color name="primary_four">#388E3C</color>
+    <color name="accent_four">#FFEB3B</color>
+
+    <color name="primary_dark_five">#E64A19</color>
+    <color name="primary_five">#E64A19</color>
+    <color name="accent_five">#795548</color>
 </resources>

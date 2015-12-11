@@ -78,7 +78,7 @@ import android.widget.ListView;
 </pre>
  *
  */
-public class MyListActivity extends AppCompatActivity {
+public class MyListActivity extends BaseActivity {
 
     // test
 
@@ -92,7 +92,8 @@ public class MyListActivity extends AppCompatActivity {
             "Palette Changing Colors",
             "Google Login Example",
             "Facebook Login Example",
-            "Data Binding Example"
+            "Data Binding Example",
+            "Theme Change Example"
     };
     private final Class[] classes = new Class[]{
             NavigationViewActivity.class,
@@ -104,7 +105,8 @@ public class MyListActivity extends AppCompatActivity {
             PaletteActivity.class,
             SocialLoginActivity.class,
             FacebookLoginActivity.class,
-            DataBindingActivity.class
+            DataBindingActivity.class,
+            ThemeSelectActivity.class
     };
     private DrawerLayout mDrawerLayout;
 

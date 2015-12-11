@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.util.Random;
 
 
-public class PaletteActivity extends AppCompatActivity {
+public class PaletteActivity extends BaseActivity {
 
     private final int[] images = new int[]{R.drawable.i1, R.drawable.i2, R.drawable.i3, R.drawable.i4,
             R.drawable.i5, R.drawable.i6, R.drawable.i7, R.drawable.i10, R.drawable.koala, R.drawable.tulips};

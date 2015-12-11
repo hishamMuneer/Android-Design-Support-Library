@@ -6,6 +6,42 @@
 
     </style>
 
+
+    <style name="AppThemeOne" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary_one</item>
+        <item name="colorPrimaryDark">@color/primary_dark_one</item>
+        <item name="colorAccent">@color/accent_one</item>
+    </style>
+
+    <style name="AppThemeTwo" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary_two</item>
+        <item name="colorPrimaryDark">@color/primary_dark_two</item>
+        <item name="colorAccent">@color/accent_two</item>
+    </style>
+
+    <style name="AppThemeThree" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary_three</item>
+        <item name="colorPrimaryDark">@color/primary_dark_three</item>
+        <item name="colorAccent">@color/accent_three</item>
+    </style>
+
+    <style name="AppThemeFour" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary_four</item>
+        <item name="colorPrimaryDark">@color/primary_dark_four</item>
+        <item name="colorAccent">@color/accent_four</item>
+    </style>
+
+    <style name="AppThemeFive" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary_five</item>
+        <item name="colorPrimaryDark">@color/primary_dark_five</item>
+        <item name="colorAccent">@color/accent_five</item>
+    </style>
+
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Main theme colors -->
         <!--   your app branding color for the app bar -->
@@ -43,39 +79,26 @@
         <item name="windowActionBar">false</item>
     </style>
 
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>
 
 
+    <!--<resources>-->
 
+    <!--&lt;!&ndash; Base application theme. &ndash;&gt;--><!--<style name="AppTheme" parent="Theme.AppCompat.Light">--><!--<item name="colorPrimary">#673AB7</item>--><!--<item name="colorPrimaryDark">#512DA8</item>--><!--<item name="colorAccent">#FF4081</item>--><!--<item name="android:windowBackground">@color/windowBG</item>--><!--<item name="drawerArrowStyle">@style/DrawerArrowStyle</item>--><!--</style>-->
 
+    <!--<style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">--><!--<item name="spinBars">true</item>--><!--<item name="color">@android:color/white</item>--><!--</style>-->
 
+    <!--<style name="Widget.CardContent" parent="android:Widget">--><!--<item name="android:paddingLeft">16dp</item>--><!--<item name="android:paddingRight">16dp</item>--><!--<item name="android:paddingTop">24dp</item>--><!--<item name="android:paddingBottom">24dp</item>--><!--<item name="android:orientation">vertical</item>--><!--</style>-->
 
-<!--<resources>-->
+    <!--<style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">--><!--<item name="windowActionBar">false</item>--><!--</style>-->
 
-<!--&lt;!&ndash; Base application theme. &ndash;&gt;-->
-<!--<style name="AppTheme" parent="Theme.AppCompat.Light">-->
-    <!--<item name="colorPrimary">#673AB7</item>-->
-    <!--<item name="colorPrimaryDark">#512DA8</item>-->
-    <!--<item name="colorAccent">#FF4081</item>-->
-    <!--<item name="android:windowBackground">@color/windowBG</item>-->
-    <!--<item name="drawerArrowStyle">@style/DrawerArrowStyle</item>-->
-<!--</style>-->
-
-<!--<style name="DrawerArrowStyle" parent="Widget.AppCompat.DrawerArrowToggle">-->
-    <!--<item name="spinBars">true</item>-->
-    <!--<item name="color">@android:color/white</item>-->
-<!--</style>-->
-
-<!--<style name="Widget.CardContent" parent="android:Widget">-->
-    <!--<item name="android:paddingLeft">16dp</item>-->
-    <!--<item name="android:paddingRight">16dp</item>-->
-    <!--<item name="android:paddingTop">24dp</item>-->
-    <!--<item name="android:paddingBottom">24dp</item>-->
-    <!--<item name="android:orientation">vertical</item>-->
-<!--</style>-->
-
-<!--<style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">-->
-    <!--<item name="windowActionBar">false</item>-->
-<!--</style>-->
-
-<!--</resources>-->
+    <!--</resources>-->
