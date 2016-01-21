@@ -1,4 +1,4 @@
-package com.hisham.design.myadapter;
+package com.hisham.design.adapter;
 
 import android.content.Context;
 import android.content.Intent;
