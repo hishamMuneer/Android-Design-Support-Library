@@ -10,6 +10,10 @@ Some features of new Android Design library. This sample contains the following:
 - Coordinator Layout
 - NavigationView
 - Snackbar
+- Google Login
+- Facebook Login
+- Data Binding
+- Content Provider
 
 Pre-requisites
 --------------
@@ -17,6 +21,10 @@ Pre-requisites
 - Android SDK v21
 - Android Build Tools v22.1.2
 - Android Support Repository v22.0.2
+
+ReadMe Markdown Basics for GIT
+--------------
+[Markdown Basics Link](https://help.github.com/articles/markdown-basics/)
 
 License
 -------
