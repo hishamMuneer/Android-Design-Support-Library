@@ -7,7 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import com.hisham.design.adapter.MyRecyclerAdapter;
+import com.hisham.design.myadapter.MyRecyclerAdapter;
 import com.hisham.design.model.RecyclerViewModel;
 import java.util.ArrayList;
 import java.util.List;
