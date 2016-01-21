@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.hisham.design.Constent.AppConstent;
+import com.hisham.design.constant.AppConstant;
 import com.hisham.design.R;
 import com.hisham.design.ThemeSelectActivity;
 import com.hisham.design.model.RecyclerViewModel;
@@ -69,23 +69,23 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Cu
 
     private void callAppropriateCode(int value) {
         Toast.makeText(mContext, value+"", Toast.LENGTH_LONG).show();
-        SharedPreferences sharedPreferences=mContext.getSharedPreferences(AppConstent.APP_THEME, Context.MODE_PRIVATE);
+        SharedPreferences sharedPreferences=mContext.getSharedPreferences(AppConstant.APP_THEME, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         switch(value){
-            case AppConstent.THEME_ONE:
-                editor.putInt(AppConstent.APP_THEME_SELECTION, AppConstent.THEME_ONE);
+            case AppConstant.THEME_ONE:
+                editor.putInt(AppConstant.APP_THEME_SELECTION, AppConstant.THEME_ONE);
                 break;
-            case AppConstent.THEME_TWO:
-                editor.putInt(AppConstent.APP_THEME_SELECTION, AppConstent.THEME_TWO);
+            case AppConstant.THEME_TWO:
+                editor.putInt(AppConstant.APP_THEME_SELECTION, AppConstant.THEME_TWO);
                 break;
-            case AppConstent.THEME_THREE:
-                editor.putInt(AppConstent.APP_THEME_SELECTION, AppConstent.THEME_THREE);
+            case AppConstant.THEME_THREE:
+                editor.putInt(AppConstant.APP_THEME_SELECTION, AppConstant.THEME_THREE);
                 break;
-            case AppConstent.THEME_FOUR:
-                editor.putInt(AppConstent.APP_THEME_SELECTION, AppConstent.THEME_FOUR);
+            case AppConstant.THEME_FOUR:
+                editor.putInt(AppConstant.APP_THEME_SELECTION, AppConstant.THEME_FOUR);
                 break;
-            case AppConstent.THEME_FIVE:
-                editor.putInt(AppConstent.APP_THEME_SELECTION, AppConstent.THEME_FIVE);
+            case AppConstant.THEME_FIVE:
+                editor.putInt(AppConstant.APP_THEME_SELECTION, AppConstant.THEME_FIVE);
                 break;
         }
 
