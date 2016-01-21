@@ -50,7 +50,7 @@ public class GoogleLoginActivity extends BaseActivity implements GoogleApiClient
         GoogleApiClient.OnConnectionFailedListener,
         View.OnClickListener {
 
-    private static final String TAG = "SocialActivity";
+    private static final String TAG = GoogleLoginActivity.class.getSimpleName();
     /* Request code used to invoke sign in user interactions. */
     private static final int RC_SIGN_IN = 0;
     /* Client used to interact with Google APIs. */
@@ -160,7 +160,6 @@ public class GoogleLoginActivity extends BaseActivity implements GoogleApiClient
     @Override
     public void onConnected(Bundle connectionHint) {
         mSignInClicked = false;
-        String details;
 
         doIfLoggedIn();
 
@@ -181,8 +180,33 @@ public class GoogleLoginActivity extends BaseActivity implements GoogleApiClient
 
             if(currentPerson.hasCover())
                 new ImageLoaderTask().execute(currentPerson.getCover().getCoverPhoto().getUrl());
+            else if(currentPerson.hasImage())
+                new ImageLoaderTask().execute(currentPerson.getImage().getUrl());
 
-            details = currentPerson.getDisplayName() + " \n" + email + "\n";
+            String details = "";
+            details += "getId = " + currentPerson.getId() + " \n";
+            details += "getAboutMe = " + currentPerson.getAboutMe() + " \n";
+            details += "getBirthday = " + currentPerson.getBirthday() + " \n";
+            details += "getBraggingRights = " + currentPerson.getBraggingRights() + " \n";
+            details += "getCurrentLocation = " + currentPerson.getCurrentLocation() + " \n";
+            details += "getDisplayName = " + currentPerson.getDisplayName() + " \n";
+            details += "getLanguage = " + currentPerson.getLanguage() + " \n";
+            details += "getNickname = " + currentPerson.getNickname() + " \n";
+            details += "getTagline = " + currentPerson.getTagline() + " \n";
+            details += "getUrl = " + currentPerson.getUrl() + " \n";
+            details += "getAgeRange = " + currentPerson.getAgeRange() + " \n";
+            details += "getCircledByCount = " + currentPerson.getCircledByCount() + " \n";
+            details += "getCover = " + currentPerson.getCover() + " \n";
+            details += "getGender = " + currentPerson.getGender() + " \n";
+            details += "getImage = " + currentPerson.getImage() + " \n";
+            details += "getName = " + currentPerson.getName() + " \n";
+            details += "getObjectType = " + currentPerson.getObjectType() + " \n";
+            details += "getOrganizations = " + currentPerson.getOrganizations() + " \n";
+            details += "getPlacesLived = " + currentPerson.getPlacesLived() + " \n";
+            details += "getPlusOneCount = " + currentPerson.getPlusOneCount() + " \n";
+            details += "getRelationshipStatus = " + currentPerson.getRelationshipStatus() + " \n";
+            details += "getUrls = " + currentPerson.getUrls() + " \n";
+            details += "getOrganizations = " + currentPerson.getOrganizations() + " \n";
             txtDetails.setText(details);
         }
     }

@@ -37,7 +37,7 @@ import com.hisham.design.provider.StudentsProvider;
  * }
  * </pre>
  */
-public class ContentProviderActivity extends AppCompatActivity {
+public class ContentProviderActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
