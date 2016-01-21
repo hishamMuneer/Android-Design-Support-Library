@@ -1,5 +1,6 @@
 package com.hisham.design;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
@@ -92,7 +93,8 @@ public class MainActivity extends AppCompatActivity {
             "Palette Changing Colors",
             "Google Login Example",
             "Facebook Login Example",
-            "Data Binding Example"
+            "Data Binding Example",
+            "Content Provider Example"
     };
     private final Class[] classes = new Class[]{
             NavigationViewActivity.class,
@@ -104,7 +106,8 @@ public class MainActivity extends AppCompatActivity {
             PaletteActivity.class,
             SocialLoginActivity.class,
             FacebookLoginActivity.class,
-            DataBindingActivity.class
+            DataBindingActivity.class,
+            ContentProviderActivity.class
     };
     private DrawerLayout mDrawerLayout;
 

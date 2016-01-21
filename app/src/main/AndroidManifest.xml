@@ -82,6 +82,17 @@
             android:name=".DataBindingActivity"
             android:label="@string/title_activity_data_binding" >
         </activity>
+        <activity
+            android:name=".ContentProviderActivity"
+            android:label="@string/title_activity_content_provider" >
+        </activity>
+
+        <!-- From Android 4.3 by default exported is false which is true by default in older versions.
+            If your provider is not exported, It will throw a permission exception if provider data is accessed.-->
+        <provider
+            android:authorities="com.example.provider.College"
+            android:name=".provider.StudentsProvider"
+            android:exported="true"></provider>
     </application>
 
 </manifest>
