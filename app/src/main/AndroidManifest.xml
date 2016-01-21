@@ -50,7 +50,7 @@
             android:name=".PaletteActivity"
             android:label="@string/title_activity_pallete"></activity>
         <activity
-            android:name=".SocialLoginActivity"
+            android:name=".GoogleLoginActivity"
             android:label="@string/title_activity_social_login"></activity>
         <activity
             android:name=".FacebookLoginActivity"

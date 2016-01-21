@@ -1,13 +1,11 @@
 package com.hisham.design;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -105,7 +103,7 @@ public class MainActivity extends BaseActivity {
             CoordinatorLayoutActivity.class,
             CollapsingToolbars.class,
             PaletteActivity.class,
-            SocialLoginActivity.class,
+            GoogleLoginActivity.class,
             FacebookLoginActivity.class,
             DataBindingActivity.class,
             ThemeSelectActivity.class,
