@@ -7,7 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import com.hisham.design.Adapter.MyRecyclerAdapter;
+import com.hisham.design.adapter.MyRecyclerAdapter;
 import com.hisham.design.model.RecyclerViewModel;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +20,7 @@ import java.util.List;
  *<div class="jd-descr">
 
  <h2 style="margin-bottom: 0px;">Class Overview</h2><hr>
- <p itemprop="articleBody">This activity is using for changing at run time. </p>
+ <p itemprop="articleBody">This activity is using for changing theme at run time. </p>
 
 
  </div>
@@ -68,7 +68,7 @@ public class ThemeSelectActivity extends BaseActivity {
     @Override
     public void onBackPressed() {
         super.onBackPressed();
-        startActivity(new Intent(ThemeSelectActivity.this,MyListActivity.class));
+        startActivity(new Intent(ThemeSelectActivity.this,MainActivity.class));
         overridePendingTransition(0, 0);
         finish();
     }

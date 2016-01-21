@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.hisham.design.Constent.AppConstent;
+import com.hisham.design.constant.AppConstant;
 
 /**
  * Created by faisal on 12/9/2015.
@@ -27,21 +27,21 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
 
-        SharedPreferences sharedPreferences=getSharedPreferences(AppConstent.APP_THEME, Context.MODE_PRIVATE);
-        switch(sharedPreferences.getInt(AppConstent.APP_THEME_SELECTION,AppConstent.THEME_DEFAULT)) {
-            case AppConstent.THEME_ONE:
+        SharedPreferences sharedPreferences=getSharedPreferences(AppConstant.APP_THEME, Context.MODE_PRIVATE);
+        switch(sharedPreferences.getInt(AppConstant.APP_THEME_SELECTION, AppConstant.THEME_DEFAULT)) {
+            case AppConstant.THEME_ONE:
                 setTheme(R.style.AppThemeOne);
                 break;
-            case AppConstent.THEME_TWO:
+            case AppConstant.THEME_TWO:
                 setTheme(R.style.AppThemeTwo);
                 break;
-            case AppConstent.THEME_THREE:
+            case AppConstant.THEME_THREE:
                 setTheme(R.style.AppThemeThree);
                 break;
-            case AppConstent.THEME_FOUR:
+            case AppConstant.THEME_FOUR:
                 setTheme(R.style.AppThemeFour);
                 break;
-            case AppConstent.THEME_FIVE:
+            case AppConstant.THEME_FIVE:
                 setTheme(R.style.AppThemeFive);
                 break;
             default:
