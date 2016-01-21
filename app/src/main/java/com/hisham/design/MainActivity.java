@@ -78,7 +78,7 @@ import android.widget.ListView;
 </pre>
  *
  */
-public class MyListActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity {
 
     // test
 
@@ -132,7 +132,7 @@ public class MyListActivity extends AppCompatActivity {
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                MyListActivity.this.startActivity(new Intent(getApplicationContext(), classes[position]));
+                MainActivity.this.startActivity(new Intent(getApplicationContext(), classes[position]));
             }
         });
 
