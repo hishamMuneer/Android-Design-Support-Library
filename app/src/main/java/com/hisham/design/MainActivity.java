@@ -79,7 +79,7 @@ import android.widget.ListView;
 </pre>
  *
  */
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
 
     // test
 
@@ -94,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
             "Google Login Example",
             "Facebook Login Example",
             "Data Binding Example",
+            "Theme Change Example",
             "Content Provider Example"
     };
     private final Class[] classes = new Class[]{
@@ -107,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
             SocialLoginActivity.class,
             FacebookLoginActivity.class,
             DataBindingActivity.class,
+            ThemeSelectActivity.class,
             ContentProviderActivity.class
     };
     private DrawerLayout mDrawerLayout;

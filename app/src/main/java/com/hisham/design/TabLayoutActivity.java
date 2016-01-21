@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 
 
-public class TabLayoutActivity extends AppCompatActivity {
+public class TabLayoutActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

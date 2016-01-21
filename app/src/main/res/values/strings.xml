@@ -69,5 +69,6 @@
     <string name="singh">Singh</string>
     <string name="no">No</string>
     <string name="info_data_binding">This data is being loaded using Data Binding. \n\nNotice that no findViewById is used to set the text on the TextView and TextViews don\'t even have ids defined.</string>
+    <string name="title_activity_theme_select">ThemeSelectActivity</string>
     <string name="title_activity_content_provider">ContentProviderActivity</string>
 </resources>

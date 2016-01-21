@@ -46,7 +46,7 @@ import java.util.ArrayList;
  * REMEMBER TO ADD GOOGLE PLAY SERVICES IN build.gradle:
  * https://developers.google.com/android/guides/setup
  */
-public class SocialLoginActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks,
+public class SocialLoginActivity extends BaseActivity implements GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         View.OnClickListener {
 

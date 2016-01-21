@@ -32,7 +32,7 @@ import android.widget.ListView;
 
  </android.support.design.widget.FloatingActionButton>
  */
-public class FloatingActionButtonActivity extends AppCompatActivity {
+public class FloatingActionButtonActivity extends BaseActivity {
 
     private final String[] objects = new String[]{
             "Text here",
