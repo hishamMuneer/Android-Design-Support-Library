@@ -13,6 +13,7 @@ Some features of new Android Design library. This sample contains the following:
 - Google Login
 - Facebook Login
 - Data Binding
+- Change Theme of complete Application Dynamically
 - Content Provider
 
 Pre-requisites
