@@ -93,7 +93,8 @@ public class MainActivity extends BaseActivity {
             "Facebook Login Example",
             "Data Binding Example",
             "Theme Change Example",
-            "Content Provider Example"
+            "Content Provider Example",
+            "Maps"
     };
     private final Class[] classes = new Class[]{
             NavigationViewActivity.class,
@@ -107,7 +108,8 @@ public class MainActivity extends BaseActivity {
             FacebookLoginActivity.class,
             DataBindingActivity.class,
             ThemeSelectActivity.class,
-            ContentProviderActivity.class
+            ContentProviderActivity.class,
+            MapsActivity.class
     };
     private DrawerLayout mDrawerLayout;
 
