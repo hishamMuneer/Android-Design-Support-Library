@@ -102,7 +102,7 @@ public class MainActivity extends BaseActivity {
             FloatingActionButtonActivity.class,
             TabLayoutActivity.class,
             CoordinatorLayoutActivity.class,
-            CollapsingToolbars.class,
+            CollapsingToolbarsActivity.class,
             PaletteActivity.class,
             GoogleLoginActivity.class,
             FacebookLoginActivity.class,

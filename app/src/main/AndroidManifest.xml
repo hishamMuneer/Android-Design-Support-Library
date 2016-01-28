@@ -46,7 +46,7 @@
             android:name=".CoordinatorLayoutActivity"
             android:label="@string/title_activity_coordinator_layout" />
         <activity
-            android:name=".CollapsingToolbars"
+            android:name=".CollapsingToolbarsActivity"
             android:label="@string/collapsing_toolbars"
             android:theme="@style/NoActionBarTheme" />
         <activity
