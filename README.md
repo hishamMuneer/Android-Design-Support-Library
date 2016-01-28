@@ -15,13 +15,14 @@ Some features of new Android Design library. This sample contains the following:
 - Data Binding
 - Change Theme of complete Application Dynamically
 - Content Provider
+- Map Implementation
 
 Pre-requisites
 --------------
 
-- Android SDK v21
-- Android Build Tools v22.1.2
-- Android Support Repository v22.0.2
+- Android SDK v23
+- Android Build Tools v21.1.2
+- Android Support Repository v23.1.1
 
 ReadMe Markdown Basics for GIT
 --------------
