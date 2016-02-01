@@ -72,4 +72,6 @@
     <string name="title_activity_theme_select">ThemeSelectActivity</string>
     <string name="title_activity_content_provider">ContentProviderActivity</string>
     <string name="title_activity_maps">Map</string>
+    <string name="title_activity_android_permissions_sample">AndroidPermissionsSampleActivity
+    </string>
 </resources>

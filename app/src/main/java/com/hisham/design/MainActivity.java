@@ -94,7 +94,8 @@ public class MainActivity extends BaseActivity {
             "Data Binding Example",
             "Theme Change Example",
             "Content Provider Example",
-            "Maps"
+            "Maps",
+            "Permissions Sample"
     };
     private final Class[] classes = new Class[]{
             NavigationViewActivity.class,
@@ -109,7 +110,8 @@ public class MainActivity extends BaseActivity {
             DataBindingActivity.class,
             ThemeSelectActivity.class,
             ContentProviderActivity.class,
-            MapsActivity.class
+            MapsActivity.class,
+            AndroidPermissionsSampleActivity.class
     };
     private DrawerLayout mDrawerLayout;
 
