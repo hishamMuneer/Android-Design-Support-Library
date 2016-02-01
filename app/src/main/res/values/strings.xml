@@ -74,4 +74,7 @@
     <string name="title_activity_maps">Map</string>
     <string name="title_activity_android_permissions_sample">AndroidPermissionsSampleActivity
     </string>
+    <string name="enter_first_number">Enter first number</string>
+    <string name="Enter_second_number">Enter Second number</string>
+    <string name="calculate_sum">Calculate Sum</string>
 </resources>
