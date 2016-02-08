@@ -9,8 +9,8 @@ import android.view.View;
  *
  * 1) open build.gradle(Module:app) and add  productFlavors {} in that file where you can define more then one package
  *    and their version like you can see in this project file i have define you package
- *    ---> com.first.faisal.multiapkdemo.paid
- *    ---> com.second.faisal.multiapkdemo.free
+ *    ---> com.faisal.design.paid
+ *    ---> com.hisham.design.free
  *    and build gradle file.  and after this in the window of android studio at the left bottom a option Build Variants from
  *    there you can select a package on which you want you build apk.
  *
