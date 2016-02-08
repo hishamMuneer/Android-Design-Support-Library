@@ -1,6 +1,5 @@
 package com.hisham.design;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -44,6 +43,6 @@ public class MultiApkActivity extends BaseActivity {
          * classes so i will start showing error
          * **/
 
-        startActivity(new Intent(MultiApkActivity.this,PaidActivity.class));
+//        startActivity(new Intent(MultiApkActivity.this,PaidActivity.class));
     }
 }
