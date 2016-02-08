@@ -20,6 +20,18 @@ android {
         }
     }
 
+    productFlavors {
+        paid {
+            applicationId = "com.faisal.design.paid"
+            versionName = "1.0-paid"
+        }
+
+        free {
+            applicationId = "com.hisham.design.free"
+            versionName = "1.0-free"
+        }
+    }
+
 }
 
 repositories {

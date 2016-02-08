@@ -96,7 +96,8 @@ public class MainActivity extends BaseActivity {
             "Content Provider Example",
             "Maps",
             "Permissions Sample",
-            "ADIL Client"
+            "ADIL Client",
+            "Multi Package Apk"
     };
     private final Class[] classes = new Class[]{
             NavigationViewActivity.class,
@@ -113,7 +114,9 @@ public class MainActivity extends BaseActivity {
             ContentProviderActivity.class,
             MapsActivity.class,
             AndroidPermissionsSampleActivity.class,
-            AdilClientActivity.class
+            AdilClientActivity.class,
+            MultiApkActivity.class
+
     };
     private DrawerLayout mDrawerLayout;
 

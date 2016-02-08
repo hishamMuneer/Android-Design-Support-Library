@@ -77,4 +77,5 @@
     <string name="enter_first_number">Enter first number</string>
     <string name="Enter_second_number">Enter Second number</string>
     <string name="calculate_sum">Calculate Sum</string>
+    <string name="click_to_paid_activity">click to paid activity</string>
 </resources>
