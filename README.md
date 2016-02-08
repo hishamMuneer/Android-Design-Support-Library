@@ -16,6 +16,10 @@ Some features of new Android Design library. This sample contains the following:
 - Change Theme of complete Application Dynamically
 - Content Provider
 - Map Implementation
+- Change Theme at run time
+- Adil Client and server 
+- Multi package Application(Paid and free)
+
 
 Pre-requisites
 --------------
