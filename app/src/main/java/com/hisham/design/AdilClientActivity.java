@@ -8,7 +8,6 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 import android.support.design.widget.TextInputLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,7 +25,7 @@ import com.example.faisal.aidlserverapp.IAdd;
  *
  */
 
-public class AdilClientActivity extends AppCompatActivity {
+public class AdilClientActivity extends BaseActivity {
 
     private TextInputLayout textInputLayoutOne;
     private TextInputLayout textInputLayoutTwo;
